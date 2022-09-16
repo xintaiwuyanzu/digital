@@ -1,0 +1,91 @@
+#####项目配置文件#####
+#打印sql语句
+logging.level.com.dr.framework.common.dao:
+  CommonMapper: debug
+#数据源
+#spring.datasource.shuzihua:
+spring.datasource.one:
+  username: root
+  password: 1234
+  url: jdbc:mysql://192.168.1.140:3306/zlmshuzihuadb?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+  #本数据源包含的模块
+  includeModules: sys,common,form,digital,utilize
+  #程序启动时表结构更新策略:
+  ##none:无操作
+  ##update:更新或者创建实体类声明的表结构信息
+  ##validate:校验实体类与对应的数据库结构并打印SQL语句和提示信息
+  autoDDl: update
+  useXa: false
+server:
+  #程序启动端口
+  port: 8087
+  #数据运维客户端配置项
+  servlet:
+    session:
+      cookie:
+        name: szh
+  #附件上传相关的配置
+  redirectPort: 8443
+  maxHttpHeaderSize: 10485760
+  maxPostSize: 104857600
+  max-http-header-size: 10000000
+  #这里的配置需要在server里面才有作用
+  multipart:
+    max-file-size: 10MB   # 默认1M
+    max-request-size: 30MB
+  tomcat:
+    max-http-form-post-size: 500MB  # 默认2M
+common:
+  enable-captcha: false
+  file:
+    file-location: D:\shuzihua
+    #file-location: /mnt/disk
+#档案存放根目录地址
+filePath: D:\shuzihua
+#filePath: /mnt/disk
+#扫描(本机ip)地址
+scan: http://localhost:8087/
+#智能归档配置系统
+znGdUrl: http://192.168.1.143:8999/api/
+#bsp配置系统
+dubboUrl: 192.168.1.144:20880
+#档案室在线移交接口
+packetsUrl: http://192.168.1.146:80/api/
+#ocr接口配置参数
+ocr:
+  base-url: https://mage.uibot.com.cn/
+  #通用文字 pubkey
+  general_pubkey: E8NuExpadkYzvHo5PVkz9nvM
+  #通用文字 secret_key
+  general_secret_key: iP7WMRO9SzwdhqOntbzv3JhEf2LV7roR
+  #通用表格 pubkey
+  table_pubkey: KPKsDxPdH9Bwy0T6uDAV6SPS
+  #通用表格 secret_key
+  table_secret_key: 7NTWa6E52CAYMxO8zSEkzCfHJy5TAzbP
+  #自定义模板 pubkey
+  template_pubkey: dF6HoOpKcw2gN0ovvkyRHkEv
+  #自定义模板 secret_key
+  template_secret_key: ensLE36Z8NAwREVk4SwxTwYr2i3ZPbfU
+#ofd接口配置参数
+ofd:
+  baseIp: http://192.168.1.143:7777/
+  clientId: 5p9j3mkyua2v8ej841q2eom4
+  clientSecret: 6d2ookte7typ67762d6dpthmvjf9p2iq
+  apiServerName: turnOfd
+  srcPath: /usr/wj
+  targetPath: /usr/wj
+  #云阅读服务IP和端口
+  ip: 192.168.1.143:8080
+dishi:
+  #ip: ai.imperial-vision.com
+  ip: 222.76.112.213
+  #port: 42009
+  port: 33309
+spring:
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+#门户系统地址
+portal:
+  portalSystem: http://192.168.1.143:8086

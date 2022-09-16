@@ -1,0 +1,33 @@
+syntax="proto3";
+option java_multiple_files = true;
+package com.imperialvision.ivapi;
+
+service IVApiService {
+  rpc getIVApiService (IVApiRequest) returns (IVApiResponse){}
+}
+
+
+message IVApiRequest {
+  bytes bytes_img = 1;
+  string container = 2;
+  bytes bytes_json = 3;
+  string uuid = 4;
+}
+
+message IVApiResponse {
+  repeated Output outputs = 1;
+  int32 error_code = 2;
+  string uuid = 3;
+  string begintime = 4;
+  string endtime = 5;
+}
+
+message Output {
+  int32 res_order = 1;
+  bytes bytes_outimg = 2;
+  string container = 3;
+  int32 width = 4;
+  int32 height = 5;
+  int64 size = 6;
+}
+

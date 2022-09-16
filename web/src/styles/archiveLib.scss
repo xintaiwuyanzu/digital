@@ -1,0 +1,62 @@
+.archiveLibIndex {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+
+  .fondTree {
+    overflow: auto;
+  }
+
+  .tables {
+    flex: 1;
+
+    .el-card__body {
+      padding: 0px;
+      display: flex;
+      height: 100%;
+      overflow: auto;
+      flex-direction: column;
+
+      > section {
+        flex: 1;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+
+        .slot {
+          display: flex;
+        }
+
+        .index_main {
+          display: flex;
+          height: 100%;
+
+          .table-container {
+            flex: 1;
+
+            td.outDateStyle {
+              color: #ff4d51;
+            }
+
+            td.editColumn {
+              > div {
+                display: flex;
+
+                > section {
+                  margin-left: 6px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.highlight-row {
+  //高亮色
+  color: #f52a2a;
+  // todo 背景色显示无效
+  background-color: #ece349;
+}

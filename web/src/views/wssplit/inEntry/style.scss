@@ -1,0 +1,149 @@
+.left-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+
+  .sortable-ghost {
+    color: $--color-danger !important;
+
+    .el-image {
+      display: none;
+    }
+
+    span {
+      color: $--color-danger;
+      font-weight: bold;
+    }
+
+    height: 20px;
+  }
+
+  .sortable-ghost + div, .sortable-ghost + .image-item {
+    border: 1px solid $--color-primary;
+  }
+
+  .move_before {
+    border: 1px solid $--color-warning;
+  }
+
+
+  .el-tag {
+    margin: 10px 10px 10px 0px;
+  }
+
+  .tag {
+    margin: 0px 8px
+  }
+
+  .drag-tree {
+    flex: 1;
+    overflow: auto;
+
+    .el-collapse-item {
+      .el-collapse-item__header {
+        font-weight: bold;
+      }
+
+      .el-icon-rank {
+        cursor: grab;
+        width: 20px;
+      }
+
+      .tree-empty {
+        margin-right: 20%;
+        padding: 10px 0px;
+
+        .el-empty__description {
+          margin-top: 4px;
+        }
+      }
+
+      .el-collapse-item__content {
+        padding: 0px;
+
+        .image-item {
+          width: 100%;
+          padding: 4px 20px;
+          display: inline-block;
+          font-size: 16px;
+        }
+
+        .image-item:hover {
+          background: gray;
+          color: white;
+        }
+
+        .sortable-selected {
+          background: gray;
+          color: white;
+        }
+      }
+    }
+
+    .currentSelect {
+      .el-collapse-item__header {
+        color: $--color-primary;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+
+  .img-container {
+    padding: 10px;
+    flex: 1;
+    overflow: auto;
+
+    .sortable-selected {
+      background: $--color-info;
+    }
+
+    .split-img-item {
+      text-align: center;
+      border-radius: 4px;
+      border: solid white;
+
+      .el-image {
+        margin: 10px;
+        min-height: 300px;
+        text-align: center;
+      }
+    }
+
+    .split-img-item:hover {
+      border: solid $--color-success;
+    }
+
+    .current {
+      border: solid $--color-primary;
+    }
+
+    .preview {
+      border: solid $--color-warning;
+    }
+
+    .el-col-4 {
+      .el-image {
+        min-height: 240px;
+      }
+    }
+
+    .el-col-6 {
+      .el-image {
+        min-height: 300px;
+        max-height: 400px;
+      }
+    }
+
+    .el-col-12 {
+      .el-image {
+        max-height: 1000px;
+      }
+    }
+  }
+}
